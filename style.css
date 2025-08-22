@@ -1,0 +1,270 @@
+html{
+    scroll-behavior: smooth;
+}
+.hero-section{
+    background: url(asset/img/dress.jpg) no-repeat center center;
+    background-size: contain;
+    background-repeat: repeat;
+    min-height: 70vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    justify-content: center;
+}
+.hero-section::before{
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width: 100%;
+    background: rgba(255, 255, 255, 0.3); 
+    z-index: 1;
+}
+.hero-section .container{
+    position: relative;
+    z-index: 2;
+}
+.hero-title{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: rgb(189, 62, 64);
+}
+.hero-search input{
+    max-width: 500px;
+}
+.btn-outline-dark{
+    transition: all 0.3s ease;
+}
+.btn-outline-dark:hover{
+    color: red;
+    background-color: whitesmoke;
+    color: red;
+    transform: scale(1.05);
+}
+
+
+#shptit{
+    color: rgb(189, 62, 64);
+}
+.product-card{
+    border-radius: 25px;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.30s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+.product-card:hover{
+    transform: translate(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.product-img{
+    height:300px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+.product-card .btn{
+    font-size: 0.875rem;
+    padding: 5px 12px;
+    border-radius: 15px;
+    color: white;
+    background-color: rgba(188, 29, 64, 0.567);
+    transition: all 0.3s ease;
+}
+.product-card .btn:hover{
+    background-color: rgb(189, 62, 64);
+    color: white;
+    transform: scale(1.05);
+}
+.hero-header{
+    background: url(asset/img/elect/elehead.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+@media(max-width:768px) {
+    .hero-header{height: 200px;}
+}
+.hh{
+    font-size: 2rem;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.pp{
+    font-size: 1.2rem;
+}
+.cosmetics-header{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background: url(asset/img/cos/cos-head1.jpg)no-repeat center/cover;
+}
+.header-overlay{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    text-align: left;
+    color: #960005;
+}
+.header-overlay h1{
+    font-size: 3.5rem;
+    margin: 0;
+    font-weight: bold;
+}
+.header-overlay p{
+    font-size: 1.7rem;
+    margin-top: 10px;
+}
+@media (max-width: 768px){
+    .header-overlay h1{
+        font-size: 1.5rem;
+    }
+    .header-overlay p{
+        font-size: 0.7rem;
+    }
+}
+@media(max-width:768px) {
+    .cosmetics-header{height: 200px;}
+}
+.cc{
+    font-size: 2.5rem;
+    margin-top: 10px;
+    margin-bottom: 2opx;
+    color:#960005; ;
+}
+.fashion-head{
+    background:url(asset/img/fash/bluedress.jpg) no-repeat center center;
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background-size: contain;
+    background-repeat: repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+.fash-head{
+    position: absolute;
+    justify-content: center;
+    transform: translateY(-50%);
+    color: rgb(20, 63, 104);
+    top: 52%;
+}
+.fash-head h1{
+    font-size: 3.0rem;
+    margin-top: 0;
+    font-weight: bold;
+}
+@media (max-width:765px){
+    .fash-head h1{
+        font-size: 2.2rem;
+    }
+    .fash-head{
+        top: 50%;
+    }
+    
+}
+@media (max-width:765px){
+    .fashion-head{height: 400px;}
+}
+.fh1{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+.furniture-head{
+    background: url(asset/img/furn/funhead1.jpg) center/cover;
+    width: 100%;
+    height: 70vh;
+}
+.funhead{
+    position: relative;
+    top: 40%;
+    left: 12%;
+    font-weight: bold;
+    color: #15155fcd;
+    font-size: 4.0rem;
+}
+@media(max-width:756px){
+    .furniture-head{
+        height: 200px;
+    }
+    .funhead{
+        font-size: 1.5rem;
+        left: 14%;
+        top: 25%;
+    }
+}
+.funp{
+    top: 41%;
+    position: relative;
+    left: 10%;
+    font-weight: bold;
+    font-size: 2.0rem;
+}
+@media(max-width:756px){
+    .funp{
+        font-size: 1rem;
+        left: 7%;
+        top: 30%;
+    }
+}
+.funh2{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+.cart-table{
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.cart-table th{
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+.cart-table td{
+    vertical-align: middle;
+}
+.cart-table input[type="number"]{
+    width: 90px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.cart-table .remove{
+    border-radius: 8px;
+    transition: all 0.2 ease-in-out;
+}
+.cart-table .remove:hover{
+    background: #c82333;
+    transform: scale(1.1);
+}
+#cardTotal{
+    color: #333;
+    font-size: 1.4rem;
+}
+.btn-success{
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3 ease-in-out;
+}
+.btn-success:hover{
+    background: #218838;
+    transform: translateY(-2px);
+
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bittle Shop</title>
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+    <link rel="stylesheet" href="asset/icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="asset/js/bootstrap.min.js"></script>
+</head>
+<body style="font-family: cursive; padding-top: 70px;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" id="shptit">Bittle Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" 
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="index.html"
+                         class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#"
+                         class="nav-link active">Product</a></li>
+                    <li class="nav-item"><a href="cart.html"
+                         class="nav-link active">Cart</a></li>
+                    <li class="nav-item"><a href="#contact-footer"
+                         class="nav-link active">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-5">
+        <div class="cart-header">
+            <h2 class="text-center mb-4">Your Shopping Cart</h2>
+            <p class="text-center">Review your items and proceed to checkout</p>
+        </div>
+        <div class="table-responsive shadow rounded-3">
+            <table class="table table-bordered text-center align-middle cart-table" id="cartTable">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Subtotal</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <tr>
+                        <td>Wireless Haedphones</td>
+                        <td class="price">$50</td>
+                        <td><Input type="number" class="form-control text-center quantity" 
+                            value="1"></Input></td>
+                        <td class="subtotal">$50</td>
+                        <td><button class="btn btn-danger btn-sm remove">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>Outdoor chair</td>
+                        <td class="price">$42.99</td>
+                        <td><Input type="number" class="form-control text-center quantity" 
+                            value="1"></Input></td>
+                        <td class="subtotal">$42.99</td>
+                        <td><button class="btn btn-danger btn-sm remove">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>White blue flora dress</td>
+                        <td class="price">$19.65</td>
+                        <td><Input type="number" class="form-control text-center quantity" 
+                            value="2"></Input></td>
+                        <td class="subtotal">$39.30</td>
+                        <td><button class="btn btn-danger btn-sm remove">Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="text-end mt-4">
+            <h4 id="cardTotal" class="fw-bold">Total: $132.29</h4>
+            <button class="btn btn-success px-4">Checkout</button>
+        </div>
+    </div>
+
+    <script>
+        function updateCart() {
+            let total = 0;
+
+            document.querySelectorAll("#cartTable tbody tr").forEach(row =>{ 
+                let price = parseFloat(row.querySelector(".price").innerText.replace("$", ""));
+                let quantity = parseFloat(row.querySelector(".Quantity").value);
+                let subtotal = price * quantity;
+            row.querySelector(".subtotal").innerText= "$" + subtotal; total += subtotal;});
+
+                document.getElementById("cardTotal").innerText = "Total: $" + total;
+        }
+        document.querySelectorAll(".quantity").forEach(input => 
+        {input.addEventListener("change", updateCart);});
+        document.querySelectorAll(".remove").forEach(button =>{button.addEventListener("click", function ()
+    {this.closest("tr").remove(); updateCart(); }); });
+    updateCart();
+    </script>
